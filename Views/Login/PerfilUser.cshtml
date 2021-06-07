@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNetCore.Http
+@model SIFHA_WEB.Models.ViewsModels.ApplicationViewsModels
+
+@{
+    ViewData["Title"] = "PerfilUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-3" id="Perfil">
+        <img src="~/Imag/user.png" class="img-fluid rounded-circle avatar2 mr-2"
+             alt="#" />
+    </div>
+    <div class="col-lg-8">
+        <h1>Perfil de Usuario</h1>
+
+    </div>
+</div>
+
+
+@*<input type="hidden" name="Id" value="@Context.Session.GetInt32("Id_usuario")" />*@
+@*<span>@Context.Session.GetInt32("Id_usuario")</span>*@
+<div>
+    <h4 class="dusu">Datos del Usuario</h4>
+    <hr />
+    <dl class="row">
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioss.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.usuarioss.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioss.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.usuarioss.User)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioss.NombreUsuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.usuarioss.NombreUsuario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioss.Cargo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.usuarioss.Cargo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioss.Telefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.usuarioss.Telefono)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioss.Direccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.usuarioss.Direccion)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
+    <a class="btn btn-success" href="~/Home/Index">Regresar</a>
+</div>

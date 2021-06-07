@@ -1,0 +1,50 @@
+﻿
+
+/*.bg-login-image1 {
+    background-image: url(../Logo/Logo-centro.png);
+    background-position: center;*/
+    /*background-size: cover;*/
+    
+/*}*/
+
+.bg-gradient-primary1 {
+    background-color: whitesmoke !important;
+}
+
+#footer {
+    height: 50px;
+    background: #efefef;
+}
+
+.card-body {
+    
+    border-left-color:black!important;
+}
+
+#logo-centro {
+    text-transform: uppercase;
+    margin-top: 30px;
+    color: #808080;
+    font-size: 18px;
+    font-family: Roboto Condensed, sans-serif;
+}
+
+.logo1 {
+    font-size: 28px;
+    font-weight: BOLD;
+   
+}
+
+.text {
+    color: #9b9e9f;
+    font-size: 18px;
+    vertical-align: unset;
+    margin-right: -1px;
+    font-weight: BOLD;
+    font-family: Roboto Condensed, sans-serif;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.text-gray-900 {
+    color: #3a3b45 !important;
+}

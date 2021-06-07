@@ -1,0 +1,127 @@
+﻿@model SIFHA_WEB.Models.Usuarios.Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="body-html" lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SIFHA-Login</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="~/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/css/Stylos.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-primary1">
+
+    <div class="container">
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+
+                        <div class="row">
+                            @*<div class="col-lg-6 d-none d-lg-block bg-login-image1"></div>*@
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <div style="text-align:center" id="logo-centro">
+                                    <div>
+                                        <img src="/Logo/Logo-centro.png" style="width: 320px;" />
+                                        <p id="logo-centro">
+                                            Ayudando hecer de la Salud Lo Primero!
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
+                                    </div>
+                                    <form asp-action="LoginUsuario" class="user" method="post">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+                                            <input asp-for="User" class="form-control form-control-user"
+                                                   id="exampleInputEmail" aria-describedby="emailHelp"
+                                                   placeholder="Usuario">
+                                            <span asp-validation-for="User" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" asp-for="PassWord" class="form-control form-control-user" id="exampleInputPassword" placeholder="Clave">
+                                            <span asp-validation-for="PassWord" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                            </div>
+                                        </div>
+                                        <span>@ViewData["Messaje"]</span>
+                                        <hr />
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                            Iniciar Secion
+                                        </button>
+                                        <hr>
+                                        <a href="" class="btn btn-google btn-user btn-block">
+
+                                            <i class="fab fa-google fa-fw"></i> Cancelar
+                                        </a>
+
+                                        <br />
+                                        <div style="color:#ccc;text-align:center">
+                                            <span>v</span>2021.01.01
+                                        </div>
+                                        <br />
+                                        <br />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 col-sm-12 col-lg-12" id="footer">
+                            <div id="app-name2" class="logo1" style="text-align: center;">
+                                <img src="~/Logo/logito.png" width="70px" height="70px"> <span class="text">Sistema de Facturacion Hospitalaria Administrativa</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    @section Scripts{
+
+    @{ <partial name="_ValidationScriptsPartial"/>}
+
+     }
+
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.easing.min.js"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
