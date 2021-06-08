@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 /* .bg-primary {
   background-color: #0d6efd !important;
@@ -45,15 +45,15 @@
 }
 
 .bg-gradient {
-  background-image: var(--bs-gradient) !important;
+    background-image: var(--bs-gradient) !important;
+}
   
-  
-  
-#layoutAuthentication {
+ #layoutAuthentication {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 #layoutAuthentication #layoutAuthentication_content {
   min-width: 0;
   flex-grow: 1;
@@ -169,7 +169,7 @@
 .form-floating > .form-control:-ms-input-placeholder, .form-floating > .dataTable-input:-ms-input-placeholder {
   color: transparent;
 }
-.form-floating > .form-control::placeholder, .form-floating > .dataTable-input::placeholder {
+.form-floating > .form-control, .form-floating > .dataTable-input} {
   color: transparent;
 }
 .form-floating > .form-control:not(:-moz-placeholder-shown), .form-floating > .dataTable-input:not(:-moz-placeholder-shown) {
@@ -260,3 +260,8 @@ small, .small {
 .text-muted {
   color: #6c757d !important;
 }
+
+div.btn-primary:hover{
+	color:#58cbf1!important;
+}
+	

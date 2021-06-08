@@ -28,11 +28,11 @@
         <div id="sidebar-container" class="bg-primary">
             <p class="centrado">
                 <a href="~/Home/index"><img src="~/Logo/Logo-Back.png" class="Logo-Menu" alt="Alternate Text" /></a>
-                
+
             </p>
             @*<div class="logo">
-                    <h4 class="text-light font-weight-bold mb-0">S I F H A</h4>
-                </div>*@
+                <h4 class="text-light font-weight-bold mb-0">S I F H A</h4>
+            </div>*@
             <div class="menu">
                 <a href="~/home/privacy" class="d-block text-light p-3 border-0">
                     <i class="icon ion-md-apps lead mr-2"></i>
@@ -56,6 +56,19 @@
                     <i class="icon ion-md-settings lead mr-2"></i>
                     Configuración
                 </a>
+
+
+                <div class="btn-group">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                        Default dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
         <!-- Fin sidebar -->
@@ -86,7 +99,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item"  href="~/login/perfilUser?Id=@Context.Session.GetInt32("Id_usuario")">Mi perfil</a>
+                                    <a class="dropdown-item" href="~/login/perfilUser?Id=@Context.Session.GetInt32("Id_usuario")">Mi perfil</a>
                                     <a class="dropdown-item" href="#">Configuración</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="~/Home/Salir">Cerrar sesión</a>
@@ -101,18 +114,18 @@
             <div id="content" class="bg-grey w-100">
 
                 @*<section class="bg-light py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 col-md-8">
-                        <h1 class="font-weight-bold mb-0">Bienvenido Ramón Martinez</h1>
-                        <p class="lead text-muted">Revisa la última información</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-8">
+                                <h1 class="font-weight-bold mb-0">Bienvenido Ramón Martinez</h1>
+                                <p class="lead text-muted">Revisa la última información</p>
+                            </div>
+                            <div class="col-lg-3 col-md-4 d-flex">
+                                <button class="btn btn-primary w-100 align-self-center">Descargar Reporte</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 d-flex">
-                        <button class="btn btn-primary w-100 align-self-center">Descargar Reporte</button>
-                    </div>
-                </div>
-            </div>
-        </section>*@
+                </section>*@
                 <br />
                 <div class="container">
                     <main role="main" class="pb-3">
@@ -131,8 +144,15 @@
                 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
                 <script src="~/js/site.js" asp-append-version="true"></script>
                 @RenderSection("Scripts", required: false)
+                <script>
+                    var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+                    var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                        return new bootstrap.Dropdown(dropdownToggleEl)
+                    })
+                </script>
 
             </div>
         </div>
+    </div>
 </body>
 </html>

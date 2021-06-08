@@ -40,8 +40,11 @@ namespace SIFHA_WEB.Controllers
             {
                 if (usu.Count == 0)
                 {
-                    ViewData["Messaje"] = "Usuario O Contraseña Incorrecto";
+
+                   
                     return RedirectToAction("Login");
+
+                    
 
                 }
                 else
@@ -50,9 +53,12 @@ namespace SIFHA_WEB.Controllers
                     HttpContext.Session.SetInt32("Id_usuario", usu.First().Id);
                     return Redirect("~/Home/Index");
                 }
+               
             }
 
             return View("Login");
+
+
         }
 
         public ActionResult PerfilUser(int Id)
@@ -81,10 +87,20 @@ namespace SIFHA_WEB.Controllers
             //}
         }
 
+        [HttpGet]
         public ActionResult CrearUsuario()
         {
-
+          
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult CrearUsuarioNuevo(Usuario usuario)
+        {
+            Sifha_Context.Add(usuario);
+            Sifha_Context.SaveChanges();
+
+            return Redirect("~/Home/Index");
         }
     }
 }

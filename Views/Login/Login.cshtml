@@ -59,30 +59,37 @@
                                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                         <div class="form-group">
                                             <input asp-for="User" class="form-control form-control-user"
-                                                   id="exampleInputEmail" aria-describedby="emailHelp"
+                                                   id="usuario" name="usuario" aria-describedby="emailHelp"
                                                    placeholder="Usuario">
                                             <span asp-validation-for="User" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" asp-for="PassWord" class="form-control form-control-user" id="exampleInputPassword" placeholder="Clave">
+                                            <input type="password" asp-for="PassWord" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Clave">
                                             <span asp-validation-for="PassWord" class="text-danger"></span>
                                         </div>
+                                        @*@if (Model.NombreUsuario == null)
+                                            {
+                                                <div class="alert alert-danger" role="alert">
+                                                    Usuario o Password Incorrectos!
+                                                </div>
+                                            }*@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                             </div>
                                         </div>
-                                        <span>@ViewData["Messaje"]</span>
                                         <hr />
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit"  id="Submit" class="btn btn-primary btn-user btn-block">
                                             Iniciar Secion
                                         </button>
                                         <hr>
+
                                         <a href="" class="btn btn-google btn-user btn-block">
 
                                             <i class="fab fa-google fa-fw"></i> Cancelar
                                         </a>
 
+                                       
                                         <br />
                                         <div style="color:#ccc;text-align:center">
                                             <span>v</span>2021.01.01
@@ -93,10 +100,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-12 col-sm-12 col-lg-12" id="footer">
                             <div id="app-name2" class="logo1" style="text-align: center;">
-                                <img src="~/Logo/logito.png" width="70px" height="70px"> <span class="text">Sistema de Facturacion Hospitalaria Administrativa</span>
+                                <img src="~/Logo/logito.png" width="70" height="70"> <span class="text">Sistema de Facturacion Hospitalaria Administrativa</span>
                             </div>
                         </div>
 
@@ -112,15 +119,46 @@
 
     @section Scripts{
 
-    @{ <partial name="_ValidationScriptsPartial"/>}
+        @{ <partial name="_ValidationScriptsPartial" />}
 
-     }
+    }
 
+    <script>
+        //function nailah() {
+        //    $("#submit").click(function () {
+        //        var usuario = $("#usuario").val();
+
+        //        if (usuario == "") {
+        //            swal({
+        //                title: "Good job!",
+        //                text: "You clicked the button!",
+        //                icon: "success",
+        //                button: "Aww yiss!",
+        //            });
+        //        }
+        //    });
+        //}
+
+        document.getElementById("Submit").onclick = function () {
+          
+                    swal({
+                        title: "Good job!",
+                        text: "You clicked the button!",
+                        icon: "success",
+                        button: "Aww yiss!",
+                    });
+            
+        }
+
+    </script>
+
+   
 
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jquery.easing.min.js"></script>
     <script src="~/js/sb-admin-2.min.js"></script>
+    <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " ></script>
 
 </body>
 
