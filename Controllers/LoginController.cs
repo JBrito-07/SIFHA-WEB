@@ -39,13 +39,8 @@ namespace SIFHA_WEB.Controllers
             if (ModelState.IsValid)
             {
                 if (usu.Count == 0)
-                {
-
-                   
+                { 
                     return RedirectToAction("Login");
-
-                    
-
                 }
                 else
                 {

@@ -58,8 +58,8 @@
                                     <form asp-action="LoginUsuario" class="user" method="post">
                                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                         <div class="form-group">
-                                            <input asp-for="User" class="form-control form-control-user"
-                                                   id="usuario" name="usuario" aria-describedby="emailHelp"
+                                            <input asp-for="User" type="text" class="form-control form-control-user"
+                                                   name="user" aria-describedby="emailHelp"
                                                    placeholder="Usuario">
                                             <span asp-validation-for="User" class="text-danger"></span>
                                         </div>
@@ -79,17 +79,17 @@
                                             </div>
                                         </div>
                                         <hr />
-                                        <button type="submit"  id="Submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" id="submit" class="btn btn-primary btn-user btn-block">
                                             Iniciar Secion
                                         </button>
                                         <hr>
 
-                                        <a href="" class="btn btn-google btn-user btn-block">
+                                        <a href="#" class="btn btn-google btn-user btn-block">
 
                                             <i class="fab fa-google fa-fw"></i> Cancelar
                                         </a>
 
-                                       
+
                                         <br />
                                         <div style="color:#ccc;text-align:center">
                                             <span>v</span>2021.01.01
@@ -124,41 +124,30 @@
     }
 
     <script>
-        //function nailah() {
-        //    $("#submit").click(function () {
-        //        var usuario = $("#usuario").val();
+       
 
-        //        if (usuario == "") {
-        //            swal({
-        //                title: "Good job!",
-        //                text: "You clicked the button!",
-        //                icon: "success",
-        //                button: "Aww yiss!",
-        //            });
-        //        }
-        //    });
-        //}
+        document.getElementById("submit").onclick = function () {
 
-        document.getElementById("Submit").onclick = function () {
-          
-                    swal({
-                        title: "Good job!",
-                        text: "You clicked the button!",
-                        icon: "success",
-                        button: "Aww yiss!",
-                    });
-            
+            swal({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+                button: "Aww yiss!",
+            });
+
+            alert('Hola a todos');
+
         }
 
     </script>
 
-   
+
 
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jquery.easing.min.js"></script>
     <script src="~/js/sb-admin-2.min.js"></script>
-    <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " ></script>
+    <script src="~/js/sweetalert.js"></script>
 
 </body>
 
