@@ -29,6 +29,11 @@ a:hover {
 }
 
 .btn-primary:hover {
+    background-color: var(--grey);
+    
+}
+
+.btn-primary:hover {
     background-color: var(--primary);
 }
 

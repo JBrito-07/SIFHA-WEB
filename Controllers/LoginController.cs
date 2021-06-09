@@ -90,8 +90,9 @@ namespace SIFHA_WEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult CrearUsuarioNuevo(Usuario usuario)
+        public ActionResult CrearUsuarioNuevo(Usuario usuario,string Nombre1,string Nombre2)
         {
+            usuario.NombreUsuario = Nombre1 + " " + Nombre2;
             Sifha_Context.Add(usuario);
             Sifha_Context.SaveChanges();
 

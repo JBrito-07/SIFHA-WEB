@@ -27,33 +27,34 @@
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header"><h3 class="text-center font-weight-light my-4">Crear Usuario</h3></div>
                                 <div class="card-body">
-                                    <form action="~/login/CrearUsuarioNuevo" method="post">
+                                    <form action="~/login/CrearUsuarioNuevo" method="post" id="form1">
                                         <div class="row mb-3">
                                             <div class="col-md-6">
-                                                <div class="form-floating mb-3 mb-md-0">
+                                                <div class="form-group mb-3 mb-md-0">
                                                     <label for="inputFirstName">Primer Nombre</label>
-                                                    <input class="form-control" id="inputFirstName" name="NombreUsuario" type="text" placeholder="Digite Primer Nombre" />
+                                                    <input class="form-control" id="FirstName" name="Nombre1" type="text" required   placeholder="Digite Primer Nombre" />
 
                                                 </div>
                                             </div>
+
                                             <div class="col-md-6">
-                                                <div class="form-floating">
+                                                <div class="form-group">
                                                     <label for="inputLastName">Segundo Nombre</label>
-                                                    <input class="form-control" id="inputLastName" type="text" placeholder="Digite Segundo Nombre" />
+                                                    <input class="form-control" id="LastName" type="text" name="Nombre2" placeholder="Digite Segundo Nombre" />
 
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-md-6">
-                                                <div class="form-floating mb-3">
+                                                <div class="form-group mb-3">
                                                     <label for="Direccion">Direccion</label>
                                                     <input class="form-control" id="inputDireccion" name="Direccion" type="text" placeholder="Calle #.. Region" />
 
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-floating mb-3">
+                                                <div class="form-group mb-3">
                                                     <label for="Direccion">Telefono</label>
                                                     <input class="form-control" id="inputTelefono" name="Telefono" type="text" placeholder="809-000-0000" />
 
@@ -64,14 +65,14 @@
 
                                         <div class="row mb-3">
                                             <div class="col-md-6">
-                                                <div class="form-floating mb-3 mb-md-0">
+                                                <div class="form-group mb-3 mb-md-0">
                                                     <label for="inputPassword">Password</label>
                                                     <input class="form-control" id="inputPassword" name="Password" type="password" placeholder="Crear un password" />
 
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-floating mb-3 mb-md-0">
+                                                <div class="form-group mb-3 mb-md-0">
                                                     <label for="inputPasswordConfirm">Confirme Password</label>
                                                     <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirme password" />
 
@@ -80,21 +81,22 @@
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-md-6">
-                                                <div class="form-floating mb-3 mb-md-0">
+                                                <div class="form-group mb-3 mb-md-0">
                                                     <label for="inputPassword">Usuario</label>
                                                     <input class="form-control" id="inputUser" type="text" name="User" placeholder="Ej: Fulano Perez: FPEREZ" />
 
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-floating mb-3 mb-md-0">
+                                                <div class="form-group mb-3 mb-md-0">
+                                                    <label for="inputPasswordConfirm">Cargo</label>
                                                     <select class=" form-control" name="Cargo">
                                                         <option value="1">Administrador</option>
                                                         <option value="2">Facturacion</option>
                                                         <option value="3">Cajera</option>
                                                         <option value="4">Admision</option>
                                                     </select>
-                                                    <label for="inputPasswordConfirm">Cargo</label>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -112,14 +114,15 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="mt-12 mb-12">
-                                            <div class="d-grid"><button style="width:100%;" class="btn btn-primary" type="submit">Crear Usuario</button></div>
+                                            <div class="d-grid"><button style="width:100%;" class="btn btn-primary" type="button" id="creausu">Crear Usuario</button></div>
+
                                         </div>
                                     </form>
+                                    
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="~/login/login">Ya Tiene Un Usuario? Inicie Secion </a></div>
+                                    <div class="small"><a href="~/login/login">Ir a Inicio de Secion </a></div>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +132,45 @@
         </div>
 
 
+        <script>
+                document.getElementById("creausu").onclick = function () {
 
+                    swal({
+                        title: "Exito!",
+                        text: "Usuario Agregado!",
+                        icon: "success",
+                        timer: 5000,
+                        button: "Aceptar!",
+
+                    });
+
+
+                    document.getElementById("form1").submit();
+
+                   
+                }
+
+            document.getElementById("union").onclick = function () {
+
+           
+              var  nombre1 =  document.getElementById("FirstName").value;
+              var  nombre2 =   document.getElementById("LastName").value;
+
+                    var union = nombre1 + ' ' + nombre2;
+                swal({
+                    title: union,
+                    text: "Usuario Agregado!",
+                    icon: "success",
+                    //timer: 5000,
+                    button: "Aceptar!",
+
+                });
+                    return (union);
+
+                    
+            }
+
+        </script>
 
 
 
@@ -149,6 +190,7 @@
             </div>*@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/js/sweetalert.js"></script>
     <script src="~/js/scripts.js"></script>
 </body>
 </html>
