@@ -7,8 +7,11 @@
     
 /*}*/
 
+
 .bg-gradient-primary1 {
-    background-color: whitesmoke !important;
+    /*background-color: whitesmoke !important;*/
+    background-image:url(../Imag/Fondo-Login.png);
+    image-resolution:500dpi;
 }
 
 #footer {

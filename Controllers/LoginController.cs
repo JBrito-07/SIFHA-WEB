@@ -93,10 +93,16 @@ namespace SIFHA_WEB.Controllers
         public ActionResult CrearUsuarioNuevo(Usuario usuario,string Nombre1,string Nombre2)
         {
             usuario.NombreUsuario = Nombre1 + " " + Nombre2;
-            Sifha_Context.Add(usuario);
-            Sifha_Context.SaveChanges();
 
-            return Redirect("~/Home/Index");
+            if (ModelState.IsValid)
+            {
+                Sifha_Context.Add(usuario);
+                Sifha_Context.SaveChanges();
+                return Redirect("~/Home/Index");
+            }
+
+            return RedirectToAction("CrearUsuario");
+
         }
     }
 }
